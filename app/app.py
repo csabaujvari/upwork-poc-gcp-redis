@@ -12,16 +12,14 @@ redis_port = int(os.environ.get('REDISPORT', 6379))
 redis_client = redis.StrictRedis(host=redis_host, port=redis_port)
 replica_redis_client = redis.StrictRedis(host=replica_redis_host, port=redis_port)
 
-
 @app.route('/')
 def index():
     value = redis_client.incr('counter', 1)
     return 'Visitor number: {}'.format(value)
 
-
 @app.route('/read-replica')
-def index():
-    value = replica_redis_client.incr('counter', 1)
+def replica_index():
+    value = replica_redis_client.get('counter')
     return 'Visitor number: {}'.format(value)
 
 

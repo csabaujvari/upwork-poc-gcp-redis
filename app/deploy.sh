@@ -35,7 +35,7 @@ __validate() {
 __build_image() {
     echo ""
     echo "Building image..."
-    docker build -f ./Dockerfile -t gcr.io/${PROJECT_ID}/app:latest .
+    docker build --platform=linux/amd64 -f ./Dockerfile -t gcr.io/${PROJECT_ID}/app:latest .
     docker push gcr.io/${PROJECT_ID}/app:latest
     echo "OK!"
 }

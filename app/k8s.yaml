@@ -4,8 +4,8 @@ metadata:
   name: redishost
   namespace: default
 data:
-  REDISHOST: 10.65.248.4
-  READ_1_REDISHOST: 10.65.248.5
+  REDISHOST: 10.206.84.133
+  READ_1_REDISHOST: 10.206.84.132
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -25,33 +25,19 @@ spec:
         app: visit-counter
     spec:
       containers:
-      - name: visit-counter
-        image: "gcr.io/engineer-cloud-nprod/app:latest"
-        env:
-        - name: REDISHOST
-          valueFrom:
-            configMapKeyRef:
-              name: redishost
-              key: REDISHOST
-        - name: READ_1_REDISHOST
-          valueFrom:
-            configMapKeyRef:
-              name: redishost
-              key: READ_1_REDISHOST
-        ports:
-        - name: http
-          containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: visit-counter
-  namespace: default
-spec:
-  type: LoadBalancer
-  selector:
-    app: visit-counter
-  ports:
-  - port: 80
-    targetPort: 8080
-    protocol: TCP
+        - name: visit-counter
+          image: "gcr.io/engineer-cloud-nprod/app:latest"
+          env:
+            - name: REDISHOST
+              valueFrom:
+                configMapKeyRef:
+                  name: redishost
+                  key: REDISHOST
+            - name: READ_1_REDISHOST
+              valueFrom:
+                configMapKeyRef:
+                  name: redishost
+                  key: READ_1_REDISHOST
+          ports:
+            - name: http
+              containerPort: 8080

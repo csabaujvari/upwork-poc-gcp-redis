@@ -10,4 +10,4 @@ RUN pip install -r /app/requirements.txt
 
 ADD . /app
 
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "main:app"]
+CMD ["python", "/app/app.py", "run", "0.0.0.0"]

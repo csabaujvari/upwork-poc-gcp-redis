@@ -38,9 +38,12 @@ The size of the cluster is currently 1 VM with `e2-medium` machine type.
 
 ![gke5.png](.readme/gke5.png)
 
-
 ### Memorystore configuration
 
 I have manually enabled Memorystore to be able to create the instance with Terraform resources. I could enable it using terraform, but the easiest way was this.
 
 ![memorystore1.png](.readme/memorystore1.png)
+
+#### Terraform README.md
+
+Read more about the terraform resources here: [terraform/README.md](terraform/README.md)

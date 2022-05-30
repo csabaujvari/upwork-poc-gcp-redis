@@ -44,6 +44,15 @@ I have manually enabled Memorystore to be able to create the instance with Terra
 
 ![memorystore1.png](.readme/memorystore1.png)
 
+### Container Registry
+
+I have manually enabled Container Registry to be able to store container images. It is required to deploy the services to the GKE cluster.
+
 #### Terraform README.md
 
 Read more about the terraform resources here: [terraform/README.md](terraform/README.md)
+
+#### Application README.md
+
+Read more about the application here:
+[app/README.md](app/README.md)

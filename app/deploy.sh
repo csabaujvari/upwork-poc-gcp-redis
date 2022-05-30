@@ -7,6 +7,7 @@ main() {
     __print_values
     __validate
     __build_image
+    __deploy
 }
 
 __print_values() {

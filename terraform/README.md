@@ -19,3 +19,7 @@ The `provider.tf` file contains the `google-provider` configurations to be able 
 ### `redis.tf`
 
 The `redis.tf` file contains the configuration of the Memorystore instance.
+
+### `vpc.tf`
+
+The `vpc.tf` file contains the dedicated VPC network definition.

@@ -12,10 +12,15 @@ variable "region" {
 variable "zone" {
   description = "Selected zone for redis instance"
   type        = string
-  default     = "us-central1"
+  default     = "us-central1-a"
 }
 variable "alternative_zone" {
   description = "Selected alternative zone for redis instance"
   type        = string
-  default     = "us-central1"
+  default     = "us-central1-c"
+}
+variable "private_network_name" {
+    type        = string
+    description = "The private network name"
+    default     = "app-network"
 }

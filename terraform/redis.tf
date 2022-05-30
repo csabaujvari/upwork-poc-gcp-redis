@@ -1,7 +1,3 @@
-data "google_compute_network" "default-network" {
-  name = "default"
-}
-
 resource "google_redis_instance" "cache" {
   project        = var.project
   name           = "cache-1"
@@ -11,7 +7,7 @@ resource "google_redis_instance" "cache" {
   location_id             = var.zone
   alternative_location_id = var.alternative_zone
 
-  authorized_network = data.google_compute_network.default-network.id
+  authorized_network = google_compute_network.vpc_network.id
 
   redis_version      = "REDIS_6_X"
   display_name       = "Redis for GKE cluster-1"

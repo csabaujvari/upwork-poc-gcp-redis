@@ -18,8 +18,8 @@ The `provider.tf` file contains the `google-provider` configurations to be able 
 
 ### `redis.tf`
 
-The `redis.tf` file contains the configuration of the Memorystore instance.
+The `redis.tf` file contains the configuration of the Memorystore instance. This resource will create a Redis instance with name `cache-1`, version `6.x`, read replica count `1`, and the size of `5 GB`.
 
 ### `vpc.tf`
 
-The `vpc.tf` file contains the dedicated VPC network definition.
+The `vpc.tf` file contains the dedicated VPC network definition. It creates the VPC network called `app-network` .

@@ -14,9 +14,17 @@ I have created a new subnet under the `default` VPC with the following configura
 
 ### GKE Cluster
 
-I've created a GKE cluster called `cluster-1` in `us-central1-c` zone. The following images shows the configuration details. I have selected the `GKE Standard` option and I set the default settings everywhere.
+I've created a GKE cluster called `cluster-1` in `us-central1-c` zone. The following images shows the configuration details. I have selected the `GKE Standard` option and I set the default settings everywhere except the on the Networking tab. I have selected the `app-network` which was created using the terraform resources. See [terraform/README.md](terraform/README.md)
 
 The size of the cluster is currently 1 VM with `e2-medium` machine type.
+
+#### Node-pool
+
+![gke0.png](.readme/gke0.png)
+
+#### Node pool security configuration
+
+![gke6.png](.readme/gke6.png)
 
 #### Cluster basics
 
